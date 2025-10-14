@@ -35,4 +35,26 @@ usage:
     credentials:
       username: admin
       password: Admin123
-  - step:
+  - step: Upload files securely
+  - step: Download decrypted files
+
+security_overview:
+  encryption:
+    type: AES-CBC
+    key_length: 16 bytes
+    iv: Random per file
+  passwords:
+    hashed: bcrypt
+  file_handling:
+    temp_files_deleted: true
+    per_user_folders: true
+  key_management:
+    location: .env
+    hardcoded: false
+
+dependencies:
+  - Flask
+  - PyCryptodome
+  - python-dotenv
+  - bcrypt
+
